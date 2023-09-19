@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <!-- Meta tags and external CSS/JS libraries -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.min.js"></script>
+    <title>Ecommerce website</title> 
+
+   <!--styling for heading and card-->
+   <style>
+    .card-header {
+        font-weight: 30px;
+        font-size: larger;
+    }
+    .card-title-big {
+        font-size: 24px; /* Increase the font size for card titles */
+    }
+    .card-spacing {
+        margin-bottom: 20px;
+    }
+   </style>
+    
+ 
+</head>
+<body>
+<!--added header-->
+    <div id="header"></div>
+
+<!--products section-->
+<div class="container">
+    <h3 class="text-center mt-4 mb-4 text-decoration-underline">PRICING</h3>
+    <p class="text-center">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It's built with default Bootstrap components and utilities with little customization.</p>
+    <br>
+    <!-- User Range Slider -->
+    <div id="userRangeSlider" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="card-deck mb-3 text-center">
+                    <!-- Free Plan -->
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Free</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$0 <small class="text-muted">/ mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>10 users included</li>
+                                <li>2 GB of storage</li>
+                                <li>Email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-outline-primary" data-toggle="modal" data-target="#freeModal">Sign up for free</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card-deck mb-3 text-center">
+                    <!-- Pro Plan -->
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Pro</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$15 <small class="text-muted">/ mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>20 users included</li>
+                                <li>10 GB of storage</li>
+                                <li>Priority email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#proModal">Get started</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="card-deck mb-3 text-center">
+                    <!-- Enterprise Plan -->
+                    <div class="card mb-4 box-shadow">
+                        <div class="card-header">
+                            <h4 class="my-0 font-weight-normal">Enterprise</h4>
+                        </div>
+                        <div class="card-body">
+                            <h1 class="card-title pricing-card-title">$29 <small class="text-muted">/ mo</small></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>30 users included</li>
+                                <li>15 GB of storage</li>
+                                <li>Phone and email support</li>
+                                <li>Help center access</li>
+                            </ul>
+                            <button type="button" class="btn btn-lg btn-block btn-primary" data-toggle="modal" data-target="#enterpriseModal">Contact us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#userRangeSlider" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#userRangeSlider" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="freeModal" tabindex="-1" role="dialog" aria-labelledby="freeModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="freeModalLabel">Free Plan Sign-Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="freeName">Name</label>
+                <input type="text" class="form-control" id="freeName" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="freeEmail">Email</label>
+                <input type="email" class="form-control" id="freeEmail" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label for="freeComments">Order Comments</label>
+                <textarea class="form-control" id="freeComments" rows="4" placeholder="Enter your order comments"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="modal fade" id="proModal" tabindex="-1" role="dialog" aria-labelledby="proModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="proModalLabel">Pro Plan Sign-Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="proName">Name</label>
+                <input type="text" class="form-control" id="proName" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="proEmail">Email</label>
+                <input type="email" class="form-control" id="proEmail" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label for="proComments">Order Comments</label>
+                <textarea class="form-control" id="proComments" rows="4" placeholder="Enter your order comments"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div class="modal fade" id="enterpriseModal" tabindex="-1" role="dialog" aria-labelledby="enterpriseModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enterpriseModalLabel">Enterprise Plan Sign-Up</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="enterpriseName">Name</label>
+                <input type="text" class="form-control" id="enterpriseName" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="enterpriseEmail">Email</label>
+                <input type="email" class="form-control" id="enterpriseEmail" placeholder="Enter your email">
+              </div>
+              <div class="form-group">
+                <label for="enterpriseComments">Order Comments</label>
+                <textarea class="form-control" id="enterpriseComments" rows="4" placeholder="Enter your order comments"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+</div>
+
+    <!-- Footer should be outside the container -->
+    <div id="footer"></div>
+
+<!--js for loading header and footer-->
+<script>
+  // Header file
+  fetch("header.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    })
+    .catch(error => console.error("Error loading header:", error));
+
+  // Fetch and insert the footer
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+</body>
+</html>

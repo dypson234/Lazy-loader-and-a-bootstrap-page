@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Header</title>
+    <!-- Including Bootstrap File From GetBootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <style>
+
+        .login-button {
+        border: 1px solid #f02d92;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #f02d92;
+        margin-right: 10px;
+        background-color: #fff;
+        }
+
+        .login-button:hover {
+        background-color: #f02d92;
+        color: #fff;
+        }
+
+        .search-button {
+        background-color: #f02d92;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        margin-right: 5px;
+        }
+
+        .search-button:hover {
+        background-color: #d51d80;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar {
+        padding: 15px 0;
+        }
+
+        .navbar-brand {
+        margin-right: 15px;
+        }
+
+        .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+        }
+
+        .navbar-nav .nav-item {
+        margin-right: 10px;
+        }
+
+        .navbar-nav .nav-link {
+        color: #f02d92;
+        font-size: 16px;
+        font-weight: bold;
+        }
+
+        .navbar-nav .nav-link:hover {
+        color: #d51d80;
+        }
+
+        .search-button {
+        font-size: 16px;
+        padding: 10px 20px;
+        }
+
+        .login-button {
+        font-size: 16px;
+        }
+
+        #cart {
+        font-size: 24px;
+        }
+
+        @media (max-width: 991.98px) {
+        .navbar-nav {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .form-inline .form-control {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 10px;
+        }
+        }
+        .custom-toggler .navbar-toggler-icon {
+        background-color: rgb(24, 20, 20);
+        border: black;
+        }
+        .navbar-toggler-icon {
+        color: rgb(15, 12, 12);
+        }
+        .navbar-toggler {
+        .navbar-toggler-icon {
+            background-image: none;
+        }
+
+        .navbar-toggler-icon::before {
+            font-family: FontAwesome;
+            content: "+";
+        }
+        }
+
+      </style>
+      <body>
+         <!-- First Header -->
+        <nav class="navbar navbar-expand-md first-nav" style="background-color: #f4eaf2">
+            <div class="container-fluid">
+              <div class="name">
+                <h3>Company Name</h3>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav justify-content-center flex-wrap w-100 nav-search">
+                  <li class="nav-item">
+                  </li>
+                </ul>
+                <ul class="navbar-nav align-items-md-center ml-auto mb-lg-0 cart-n-loginbtn">
+                  
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >
+                      Enterprice
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >
+                      Support
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" >
+                      Pricing
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="login.html">
+                      <button class="login-button">SignUp</button>
+                    </a>
+                  </li>
+                 
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+      </body>
+  </head>
+</html>
+
+
+
+
+<script>
+  // Header file
+  fetch("header.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("header").innerHTML = html;
+    })
+    .catch(error => console.error("Error loading header:", error));
+
+  // Fetch and insert the footer
+  fetch("footer.html")
+    .then(response => response.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    })
+    .catch(error => console.error("Error loading footer:", error));
+</script>
+</body>
+</html>

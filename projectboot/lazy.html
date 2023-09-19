@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading Example with Images</title>
+</head>
+<body>
+    <ul id="results">
+        <!-- Results will be displayed here -->
+    </ul>
+    <button id="loadMoreBtn">Load More</button>
+    <script>
+        const loadMoreBtn = document.getElementById('loadMoreBtn');
+        const resultsList = document.getElementById('results');
+        let currentPage = 1;
+
+        loadMoreBtn.addEventListener('click', () => {
+            // When the "Load More" button is clicked, load more data
+            loadMoreData();
+        });
+
+        function fetchData(page) {
+            const apiUrl = `https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=10`;
+
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    if (page === 1) {
+                        // Initial data load
+                        renderData(data);
+                    } else {
+                        // Subsequent data loads
+                        appendData(data);
+                    }
+                    currentPage++;
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        function renderData(data) {
+            resultsList.innerHTML = ''; // Clear existing content when rendering initial data
+
+            data.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <img src="${item.url}" alt="${item.title}">
+                    <h2>${item.title}</h2>
+                `;
+                resultsList.appendChild(listItem);
+            });
+        }
+
+        function appendData(data) {
+            data.forEach(item => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <img src="${item.url}" alt="${item.title}">
+                    <h2>${item.title}</h2>
+                `;
+                resultsList.appendChild(listItem);
+            });
+        }
+
+        function isNearBottomOfPage() {
+            const pageHeight = window.innerHeight;
+            const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+
+            return pageHeight + scrollTop >= scrollHeight - 100;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (isNearBottomOfPage()) {
+                // User has reached the end of the page, load more data
+                loadMoreData();
+            }
+        });
+
+        function loadMoreData() {
+            fetchData(currentPage);
+        }
+
+        // Initial data load
+        fetchData(currentPage);
+    </script>
+</body>
+</html>
